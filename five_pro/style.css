@@ -1,12 +1,6 @@
 body {
-    background-color: aqua;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url(guessing-game-1-2048.webp);
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background-image: url("./download.jpg");
+    object-fit: contain;
 }
 .main{
     margin-top: 12rem;
