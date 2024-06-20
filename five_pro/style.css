@@ -1,4 +1,4 @@
-body {
+/* body {
       background-image: url("download.jpg");
       background-size: cover;
       background-repeat: no-repeat;
@@ -16,3 +16,4 @@ body {
        left: 0;
        z-index: 1; /* Ensures canvas is above the background image */
        }
+ */
