@@ -1,13 +1,18 @@
 body {
-    background-image: url("download.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed; /* Ensures the background image stays fixed during scrolling */
-    width: 100%;
-    height: 100%;
-    margin: 0; /* Removes default margin */
-    padding: 0; /* Removes default padding */
-}
+      background-image: url("download.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+       background-attachment: fixed; /* Ensures the background image stays fixed during scrolling */
+       width: 100%;
+       height: 100%;
+       margin: 0; /* Removes default margin */
+       padding: 0; /* Removes default padding */
+     }
 
-
+ canvas {
+       position: absolute; /* Ensures canvas is positioned absolutely */
+       top: 0;
+       left: 0;
+       z-index: 1; /* Ensures canvas is above the background image */
+       }
