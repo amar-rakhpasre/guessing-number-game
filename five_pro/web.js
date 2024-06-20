@@ -1,3 +1,4 @@
+// Number Guessing Game
 const max = 1000;
 const min = 1;
 const answer = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -6,27 +7,38 @@ let attempts = 0;
 let guess;
 let running = true;
 
-while (running) {
-    guess = window.prompt(`Guess a number between ${min}-${max}`);
-    guess = Number(guess);
+const gameLoop = () => {
+    if (running) {
+        guess = window.prompt(`Guess a number between ${min}-${max}`);
+        guess = Number(guess);
 
-    if (isNaN(guess)) {
-        window.alert("Please enter a valid number");
-    } else if (guess < min || guess > max) {
-        window.alert("Please enter a number between the specified range");
-    } else {
-        attempts++;
-        if (guess < answer) {
-            window.alert("TOO LOW! TRY AGAIN!");
-        } else if (guess > answer) {
-            window.alert("TOO HIGH! TRY AGAIN!");
+        if (isNaN(guess)) {
+            window.alert("Please enter a valid number");
+        } else if (guess < min || guess > max) {
+            window.alert("Please enter a number between the specified range");
         } else {
-            window.alert(`CORRECT! The answer was ${answer}. It took you ${attempts} attempts`);
-            running = false;
+            attempts++;
+            if (guess < answer) {
+                window.alert("TOO LOW! TRY AGAIN!");
+            } else if (guess > answer) {
+                window.alert("TOO HIGH! TRY AGAIN!");
+            } else {
+                window.alert(`CORRECT! The answer was ${answer}. It took you ${attempts} attempts`);
+                running = false;
+            }
+        }
+
+        // Schedule the next prompt
+        if (running) {
+            setTimeout(gameLoop, 0);
         }
     }
-}
+};
 
+// Start the game loop
+setTimeout(gameLoop, 0);
+
+// Canvas Animation
 let canvas = document.querySelector("canvas");
 let ctx = canvas.getContext("2d");
 let width = (canvas.width = window.innerWidth);
